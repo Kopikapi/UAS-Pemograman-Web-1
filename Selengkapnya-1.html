@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detail Destinasi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+.realistic-waves {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  animation: waveMotion 18s linear infinite;
+}
+
+.wave2 {
+  animation-delay: -4s;
+}
+
+.wave3 {
+  animation-delay: -2s;
+}
+
+@keyframes waveMotion {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+    .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.card-glass {
+  width: 300px; /* Atur lebar agar sejajar */
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.card-glass {
+    
+    position: relative;
+    width: 300px;
+    margin: 20px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s;
+    
+  }
+
+  .card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.card-glass {
+  display: flex;
+  flex-direction: column;
+}
+.card-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+  
+
+  .card-glass:hover {
+    transform: scale(1.05);
+  }
+
+  .card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .card-info {
+    padding: 20px;
+    text-align: center;
+    color: #0e0e0e;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .card-info h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .card-info p {
+    font-size: 1em;
+    line-height: 1.4;
+  }
+
+  
+    .btn-modern {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(90deg, #fba24e, hsl(40, 92%, 71%));
+  color: rgb(14, 14, 14);
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+.btn-modern .arrow {
+  margin-right: 8px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.btn-modern:hover {
+  background: linear-gradient(90deg, #f69402, #f69402);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+    body {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f4f7;
+      color: #333;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+    h1 {
+      text-align: center;
+      color: #000000;
+      margin-bottom: 3rem;
+    }
+    .destinasi {
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      margin-bottom: 3rem;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .destinasi:hover {
+      transform: translateY(-5px);
+    }
+    .destinasi img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .destinasi-content {
+      padding: 1.5rem;
+    }
+    .destinasi-content h2 {
+      color: #0e0e0e;
+      margin-bottom: 0.5rem;
+    }
+    .destinasi-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+    .btn-back {
+      display: inline-block;
+      margin-top: 2rem;
+      text-decoration: none;
+      background: linear-gradient(90deg, #0d6efd, #3ebdff);
+      padding: 0.7rem 1.5rem;
+      color: white;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+    .btn-back:hover {
+      background: linear-gradient(90deg, #3ebdff, #0d6efd);
+    }
+    @media screen and (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <h1>Detail Destinasi Populer</h1>
+
+  <div class="card-container">
+    <div class="card-glass">
+      <img src="assets/img/dest/1.jpeg" alt="Pulau Komodo" class="card-img" />
+      <div class="card-info">
+        <h2>Pulau Komodo</h2>
+        <p>Pulau Komodo, permata eksotis di Nusa Tenggara Timur, adalah satu-satunya tempat di dunia di mana kamu bisa bertemu langsung dengan naga purba Komodo.
+        Dengan hamparan bukit hijau, pasir pantai berwarna merah muda, dan air laut sebening kristal.</p>
+      </div>
+    </div>
+
+    <div class="card-glass">
+      <img src="assets/img/dest/Dest 1 (2).jpeg" alt="Bali" class="card-img"/>
+      <div class="card-info">
+        <h2>Bali</h2>
+        <p>Bali, pulau dewata, terkenal dengan pantai-pantainya yang indah, budaya Hindu yang kental, dan keramahan penduduk lokal. Dari Ubud yang tenang hingga Kuta yang semarak, Bali adalah destinasi impian bagi wisatawan domestik dan internasional.</p>
+      </div>
+    </div>
+
+    <div class="card-glass">
+      <img src="assets/img/dest/Dest 1 (3).jpeg" alt="Yogyakarta" class="card-img"/>
+      <div class="card-info">
+        <h2>Yogyakarta</h2>
+        <p>Yogyakarta adalah kota budaya yang kaya akan sejarah, seni, dan kuliner. Kunjungi Candi Prambanan dan Borobudur, nikmati Gudeg khas Jogja, dan eksplorasi keraton. Sangat cocok bagi pencinta sejarah dan wisata edukatif.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center;">
+    <a href="index.html" class="btn-modern">
+      <span class="arrow">←</span> Kembali ke Beranda
+    </a>
+  </div>
+</div>
+
+  <script>
+  // Saat halaman selesai dimuat
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('loaded');
+  });
+
+  // Saat klik link internal, beri efek fade-out sebelum redirect
+  document.querySelectorAll('a[href]').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && !href.startsWith('http') && !href.startsWith('#') && !link.hasAttribute('target')) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const destination = this.getAttribute('href');
+        document.body.classList.remove('loaded');
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = destination;
+        }, 400); // waktu sinkron dengan CSS transition
+      });
+    }
+  });
+</script>
+
+<div class="realistic-waves">
+  <svg class="wave wave1" viewBox="0 0 1200 200" preserveAspectRatio="none">
+    <path d="M0,100 C300,200 900,0 1200,100 L1200,200 L0,200 Z" fill="rgba(0, 123, 255, 0.4)"/>
+  </svg>
+  <svg class="wave wave2" viewBox="0 0 1200 200" preserveAspectRatio="none">
+    <path d="M0,120 C300,180 900,20 1200,80 L1200,200 L0,200 Z" fill="rgba(0, 123, 255, 0.3)"/>
+  </svg>
+  <svg class="wave wave3" viewBox="0 0 1200 200" preserveAspectRatio="none">
+    <path d="M0,140 C300,160 900,40 1200,60 L1200,200 L0,200 Z" fill="rgba(0, 123, 255, 0.2)"/>
+  </svg>
+</div>
+
+</body>
+</html>
